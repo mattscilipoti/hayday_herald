@@ -37,6 +37,7 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+gem "capybara", :group => [:development, :test]
 group :test do
   gem "cucumber-rails", :require => false
   gem "capybara"
@@ -45,6 +46,7 @@ end
 
 gem "github", ">= 0.7.0", :require => nil, :group => [:development]
 gem "rspec-rails", :group => [:development, :test]
+gem "sqlite3", :group => [:development, :test]
 group :assets do
   gem "twitter-bootstrap-rails"
   gem "therubyracer"

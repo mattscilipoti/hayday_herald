@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-HaydayHerald::Application.config.secret_token = '3fae5b0ec5930e6c650d1fb63f9b750d77c18257a105ac59ea6a9672f709e20bf7cfb61cd20d3ed3397cc8dea9b0c6422eb4f4d8e32c7d6ae556a3834ac0a83d'
+HaydayHerald::Application.config.secret_token = '2a446abeb8195cc4f07532f19a63d079c0cab1603e23d3b97398848b1ca6e03113647892f862c4ea5a00cd600bdd2bdfe6290c6479a02339ab62d1bc2f167168'

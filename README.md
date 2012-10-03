@@ -13,12 +13,14 @@ The original scaffold for this application was created by [App Scrolls](http://a
 
 The project was created with the following scrolls:
 
+* capybara
 * cucumber
 * git
 * github
 * jquery
 * rails_basics
 * rspec
+* sqlite3
 * twitter_bootstrap
 * simple_form
 
