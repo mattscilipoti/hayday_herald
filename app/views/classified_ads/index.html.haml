@@ -1,0 +1,17 @@
+%h1 Listing classified_ads
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @classified_ads.each do |classified_ad|
+    %tr
+      %td= link_to 'Show', classified_ad
+      %td= link_to 'Edit', edit_classified_ad_path(classified_ad)
+      %td= link_to 'Destroy', classified_ad, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Classified ad', new_classified_ad_path

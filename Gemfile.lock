@@ -71,6 +71,12 @@ GEM
       launchy (~> 2.0.2)
       text-format (= 1.0.0)
       text-hyphen (= 1.0.0)
+    haml (3.1.7)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     highline (1.6.15)
     hike (1.2.1)
     i18n (0.6.1)
@@ -188,6 +194,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner
   github (>= 0.7.0)
+  haml-rails
   jquery-rails
   rails (= 3.2.8)
   rspec-rails

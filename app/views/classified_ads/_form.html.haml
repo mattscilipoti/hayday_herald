@@ -1,0 +1,10 @@
+= form_for @classified_ad do |f|
+  -if @classified_ad.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@classified_ad.errors.count, "error")} prohibited this classified_ad from being saved:"
+      %ul
+        - @classified_ad.errors.full_messages.each do |msg|
+          %li= msg
+
+  .actions
+    = f.submit 'Save'
