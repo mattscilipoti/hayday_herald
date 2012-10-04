@@ -17,9 +17,9 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
+  gem 'twitter-bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
+  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -38,18 +38,21 @@ end
 # To use debugger
 # gem 'debugger'
 
-gem "capybara", :group => [:development, :test]
-group :test do
-  gem "cucumber-rails", :require => false
+group :development, :test do
   gem "capybara"
-  gem "database_cleaner"
+  gem "rspec-rails"
+  gem "sqlite3"
 end
 
-gem "github", ">= 0.7.0", :require => nil, :group => [:development]
-gem "rspec-rails", :group => [:development, :test]
-gem "sqlite3", :group => [:development, :test]
-group :assets do
-  gem "twitter-bootstrap-rails"
-  gem "therubyracer"
+group :development do
+  gem 'github', ">= 0.7.0", :require => nil
+  gem 'hpricot', :require => nil # for html2haml
+  gem 'ruby_parser', :require => nil # for html2haml
+end
+
+group :test do
+  gem 'cucumber-rails', :require => false
+  gem 'capybara'
+  gem 'database_cleaner'
 end
 
