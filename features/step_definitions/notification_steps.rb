@@ -1,6 +1,6 @@
 module NavigationLogic
   def path_to(path_name)
-    send("#{path_name.underscore}_path")
+    send("#{path_name.parameterize.underscore}_path")
   end
 end
 World(NavigationLogic)

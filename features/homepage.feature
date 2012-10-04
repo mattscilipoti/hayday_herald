@@ -7,5 +7,5 @@ Feature: The Home Page
     Then I should not see any error messages
 
     When I follow "Classifieds"
-    Then I should see "Your Classified Ads"
+    Then I should see "Classified Ads"
     Then I should be on the "Classified Ads" page
