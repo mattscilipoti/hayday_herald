@@ -1,4 +1,6 @@
 HaydayHerald::Application.routes.draw do
+  resources :items
+
   resources :classified_ads
 
   root :to => 'home#index', :as => 'home'

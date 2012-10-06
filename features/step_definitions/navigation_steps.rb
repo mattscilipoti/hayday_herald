@@ -6,6 +6,11 @@ When /go ?to the "(.*?)" page$/ do |page_name|
   visit path_to(page_name)
 end
 
+When /^I go to the (New|Edit) page for a (.+)$/ do |action, requested_model|
+  model_name_for_path = requested_model.delete(' ').underscore
+  visit send("#{action.underscore}_#{model_name_for_path}_path")
+end
+
 When /go to the Edit page for that (.+)/ do |model|
   visit send("edit_admin_#{model.underscore}_path", @current_model)
 end

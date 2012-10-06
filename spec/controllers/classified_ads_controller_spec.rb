@@ -79,9 +79,9 @@ describe ClassifiedAdsController do
         assigns(:classified_ad).should be_persisted
       end
 
-      it "redirects to the created classified_ad" do
+      it "redirects to the classified_ads" do
         post :create, {:classified_ad => valid_attributes}, valid_session
-        response.should redirect_to(ClassifiedAd.last)
+        response.should redirect_to(classified_ads_path)
       end
     end
 

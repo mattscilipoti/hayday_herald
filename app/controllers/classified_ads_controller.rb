@@ -44,7 +44,7 @@ class ClassifiedAdsController < ApplicationController
 
     respond_to do |format|
       if @classified_ad.save
-        format.html { redirect_to @classified_ad, notice: 'Classified ad was successfully created.' }
+        format.html { redirect_to classified_ads_path, notice: 'Classified ad was successfully created.' }
         format.json { render json: @classified_ad, status: :created, location: @classified_ad }
       else
         format.html { render action: "new" }

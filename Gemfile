@@ -39,9 +39,10 @@ end
 # gem 'debugger'
 
 group :development, :test do
-  gem "capybara"
-  gem "rspec-rails"
-  gem "sqlite3"
+  gem 'capybara'
+  gem 'debugger'
+  gem 'rspec-rails'
+  gem 'sqlite3'
 end
 
 group :development do

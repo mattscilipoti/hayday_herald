@@ -1,13 +1,21 @@
 %h1 Classified Ads
 
-%table
+%table#classified_ads
   %tr
+    %th Item
+    %th Cost Per
+    %th Quantity
+    %th Total Cost
     %th
     %th
     %th
 
   - @classified_ads.each do |classified_ad|
     %tr
+      %td= classified_ad.item
+      %td= classified_ad.cost_per
+      %td= classified_ad.quantity
+      %td= classified_ad.total_cost
       %td= link_to 'Show', classified_ad
       %td= link_to 'Edit', edit_classified_ad_path(classified_ad)
       %td= link_to 'Destroy', classified_ad, :confirm => 'Are you sure?', :method => :delete

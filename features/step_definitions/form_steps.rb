@@ -59,7 +59,7 @@ When /save these updates to the (.+):/ do |model_name, table|
   end
 end
 
-When /^I submit the form$/ do
+When /^I submit the (?:form|page)$/ do
   submit_form
 end
 
