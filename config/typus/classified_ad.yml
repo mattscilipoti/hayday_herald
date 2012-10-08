@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+ClassifiedAd:
+  fields:
+    default: item_id, quantity, cost_per
+    form: item_id, quantity, cost_per
+  relationships: 
+  application: Application
