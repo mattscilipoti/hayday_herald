@@ -1,4 +1,6 @@
 HaydayHerald::Application.routes.draw do
+  devise_for :users
+
   devise_for :devise_users
 
   resources :items
