@@ -7,9 +7,10 @@ gem 'rails', '3.2.8'
 
 gem 'sqlite3'
 
+gem 'devise'#, "~> 2.0.4"
 gem 'haml-rails'
 gem 'jquery-rails'
-gem "simple_form"
+gem 'simple_form'
 gem 'typus'
 
 

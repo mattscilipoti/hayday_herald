@@ -1,5 +1,9 @@
 # ReadMe
 
+Using Devise
+
+For Admin, typus
+*  see: http://docs.typuscmf.com/en/latest/recipes/devise-authentication.html
 
 ## Deployment
 
