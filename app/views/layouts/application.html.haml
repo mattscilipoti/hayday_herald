@@ -21,12 +21,11 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand{:href => "#"} Hayday Herald
+          %a.brand{:href => home_path} HayDay Herald
           .container-fluid.nav-collapse
             %ul.nav
               %li= link_to "Classifieds", classified_ads_path
-              %li= link_to "Link2", "/path2"
-              %li= link_to "Link3", "/path3"
+              %li= link_to "Admin", admin_path
           / /.nav-collapse
     .container-fluid
       - flash.each do |name, msg|
@@ -34,7 +33,7 @@
           %a.close{"data-dismiss" => "alert"} ×
           = msg
       .row-fluid
-        .span3
+        -#.span3
           .well.sidebar-nav
             %ul.nav.nav-list
               %li.nav-header Sidebar
