@@ -7,17 +7,17 @@
   height: 20px;
 }
 
+img.thumbnail {
+  width:  100px;
+  height: 100px;
+}
+
 #items li {
   display: inline;
   float: left;
   list-style-type: none;
   padding-right: 20px;
   width: 100px;
-
-  img {
-    width:  100px;
-    height: 100px;
-  }
 }
 
 .clear {

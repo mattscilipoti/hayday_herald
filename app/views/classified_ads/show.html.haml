@@ -1,6 +1,18 @@
+- ad ||= @classified_ad
+
 %p#notice= notice
 
+-item = ad.item
 
+= item.name
+= image_tag item.image_name, :class => 'thumbnail'
+Qty:
+= ad.quantity
+%br
+Cost per:
+= ad.cost_per
+
+%br
 = link_to 'Edit', edit_classified_ad_path(@classified_ad)
 \|
 = link_to 'Back', classified_ads_path
