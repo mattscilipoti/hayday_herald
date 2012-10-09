@@ -1,8 +1,6 @@
 HaydayHerald::Application.routes.draw do
   devise_for :users
 
-  resources :items
-
   resources :classified_ads
 
   root :to => 'home#index', :as => 'home'
