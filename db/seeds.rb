@@ -6,5 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+puts "Seeding db..."
 crops = %w(Wheat Corn Soybean Sugarcane Carrot Pumpkin Indigo)
-crops.each {|crop| Item.create!(:name => crop)}
+crops.each {|crop| Item.find_or_create_by_name(:name => crop)}

@@ -6,5 +6,7 @@ namespace :db do
     # run db:test:prepare last because it messes with RAILS_ENV
     puts "INFO: Preparing test db..."
     Rake::Task['db:test:prepare'].invoke
+
+    Rake::Task['db:seed'].invoke
   end
 end
