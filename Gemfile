@@ -56,8 +56,8 @@ end
 
 group :test do
   gem 'cucumber-rails', :require => false
-  gem 'capybara'
-  gem 'database_cleaner'
+  gem 'capybara', :require => false
+  gem 'database_cleaner', :require => false
   # zeus & in-memory db don't play well together
   #gem 'memory_test_fix', :github => 'stepahn/memory_test_fix'
 end
