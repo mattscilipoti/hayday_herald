@@ -2,6 +2,7 @@
 
 %table#classified_ads
   %tr
+    %th
     %th Item
     %th Cost Per
     %th Quantity
@@ -12,7 +13,9 @@
 
   - @classified_ads.each do |classified_ad|
     %tr
-      %td= classified_ad.item
+      -item = classified_ad.item
+      %td.item.icon= image_tag(item.image_name, :alt => item.name)
+      %td= item
       %td= classified_ad.cost_per
       %td= classified_ad.quantity
       %td= classified_ad.total_cost
