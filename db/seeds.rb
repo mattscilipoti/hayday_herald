@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+crops = %w(Wheat Corn Soybean Sugarcane Carrot Pumpkin Indigo)
+crops.each {|crop| Item.create!(:name => crop)}
