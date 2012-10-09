@@ -7,8 +7,17 @@
           %li= msg
 
   -#=f.input :user, :as => :hidden
-  =f.association :item, :as => :radio_buttons
-  =f.input :quantity
-  =f.input :cost_per
+  %div#items
+    %ul
+      - Item.all.each do |item|
+        %li
+          = f.label "item_id_#{item.id}" do
+            = item.name
+            = f.radio_button(:item_id, item.id)
+            = image_tag "#{item.name.underscore}.jpeg"
+
+  %div#info.clear
+    =f.input :quantity
+    =f.input :cost_per
 
   =f.button :submit
