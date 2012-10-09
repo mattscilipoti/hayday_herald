@@ -39,3 +39,5 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+load Rails.root.join('db/seeds.rb')

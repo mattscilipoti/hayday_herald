@@ -3,8 +3,8 @@ require 'spec_helper'
 describe "classified_ads/index" do
   before(:each) do
     assign(:classified_ads, [
-      stub_model(ClassifiedAd),
-      stub_model(ClassifiedAd)
+      stub_model(ClassifiedAd, :item => Item.first),
+      stub_model(ClassifiedAd, :item => Item.last)
     ])
   end
 

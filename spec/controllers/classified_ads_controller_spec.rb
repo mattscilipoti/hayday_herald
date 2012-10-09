@@ -24,7 +24,7 @@ describe ClassifiedAdsController do
   # ClassifiedAd. As you add validations to ClassifiedAd, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    { :item_id => Item.last || Item.create!(:name => 'TEST') }
   end
 
   # This should return the minimal set of values that should be in the session
