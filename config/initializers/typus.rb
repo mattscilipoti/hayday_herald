@@ -37,4 +37,7 @@ Typus.setup do |config|
   # config.pagination = { :previous_label => "&larr; " + Typus::I18n.t("Previous"),
   #                       :next_label => Typus::I18n.t("Next") + " &rarr;" }
 
+  # Customization
+  config.authentication = :devise
+  config.user_class_name = "User"
 end
