@@ -58,5 +58,6 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'memory_test_fix', :github => 'stepahn/memory_test_fix'
 end
 
