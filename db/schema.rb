@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121008213602) do
+ActiveRecord::Schema.define(:version => 20121009231324) do
 
   create_table "classified_ads", :force => true do |t|
     t.integer  "item_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.integer  "quantity"
-    t.integer  "cost_per"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "quantity",   :default => 1
+    t.integer  "cost_per",   :default => 0
+    t.integer  "total_cost", :default => 0
   end
 
   create_table "items", :force => true do |t|

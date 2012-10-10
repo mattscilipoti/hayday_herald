@@ -8,8 +8,8 @@ Feature: Classified Ads
 
     And I select the "Wheat" Item
     And I fill in:
-      | Quantity | 10    |
-      | Cost per | 2     |
+      | Quantity   | 10 |
+      | Total cost | 20 |
 
     And I submit the page
 
