@@ -14,6 +14,10 @@ img.thumbnail {
 
 $ad_font_size: 4em;
 
+.controls {
+  font-size: $ad_font_size;
+}
+
 #items li {
   padding-right: 20px;
   width: 100px;
@@ -21,7 +25,8 @@ $ad_font_size: 4em;
 
 #quantity {
 
-  $qty_height: 100px;
+  $qty_height: 50px;
+  $qty_padding: 4px;
 
   li.circle {
     height: $qty_height;
@@ -31,13 +36,13 @@ $ad_font_size: 4em;
     border-radius: $qty_height;
     // vert-align radio button
     line-height: 2*$ad_font_size;
-    margin: 4px;
-    padding: 4px;
+    margin: $qty_padding;
+    padding: $qty_padding;
     position: relative;
     text-align: center;
 
     input {
-      //display: none;
+      display: none;
 
       &:checked + label {
         color: blue;
@@ -54,7 +59,7 @@ $ad_font_size: 4em;
       font-size: $ad_font_size;
       padding: $qty_height/2 0 0 0;
       position: absolute;
-      top: 0px;
+      top: -$qty_padding;
       left: 0px;
 
     }
@@ -64,6 +69,6 @@ $ad_font_size: 4em;
 #total_cost {
   input {
     height: 1em;
-    font-size: $ad_font_size;
+    font-size: 1em;
   }
 }

@@ -1,4 +1,4 @@
-= simple_form_for @classified_ad do |f|
+= simple_form_for @classified_ad, :class => 'form-horizontal' do |f|
   -if @classified_ad.errors.any?
     #error_explanation
       %h2= "#{pluralize(@classified_ad.errors.count, "error")} prohibited this classified_ad from being saved:"
@@ -31,6 +31,6 @@
 
   #total_cost.clear
     =field_set_tag 'How Much?' do
-      =f.input :total_cost
+      =f.input :total_cost, :as => :currency, :label => ' ', :placeholder => "$10"
 
   =f.button :submit
