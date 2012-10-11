@@ -8,7 +8,7 @@
 
   -#=f.input :user, :as => :hidden
   %div#items
-    %ul
+    %ul.horizontal
       - Item.all.each do |item|
         %li
           = f.label "item_id_#{item.id}" do

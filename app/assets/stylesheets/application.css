@@ -11,3 +11,13 @@
  *= require_self
  *= require_tree .
  */
+
+ul.horizontal li {
+  display: inline;
+  float: left;
+  list-style-type: none;
+}
+
+.clear {
+  clear: both;
+}
