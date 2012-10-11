@@ -3,12 +3,12 @@ jQuery ($) ->
   $mainNav2.append "<li id='magic-line-two'></li>"
   $magicLineTwo = $("#magic-line-two")
   $magicLineTwo
-    .width($(".nav .active") .width())
+    .width($(".nav .active").parent().width())
     .height($mainNav2.height())
     .css("left", $(".nav a.active").position().left)
     .data("origLeft",  $(".nav a.active").position().left)
     .data("origWidth", $magicLineTwo.width())
-    .data("origColor", $(".nav a.active").attr("rel"))
+    .data("origColor", $(".nav .active").attr("rel"))
 
   $(".nav a").hover ->
     $el = $(this)
@@ -19,11 +19,11 @@ jQuery ($) ->
       width: newWidth
       backgroundColor: $el.attr("rel")
 
-  # ), ->
-  #   $magicLineTwo.stop().animate
-  #     left: $magicLineTwo.data("origLeft")
-  #     width: $magicLineTwo.data("origWidth")
-  #     backgroundColor: $magicLineTwo.data("origColor")
+  , ->
+    $magicLineTwo.stop().animate
+      left: $magicLineTwo.data("origLeft")
+      width: $magicLineTwo.data("origWidth")
+      backgroundColor: $magicLineTwo.data("origColor")
 
   # Kick IE into gear
   $(".nav .active a").mouseenter()
