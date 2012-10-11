@@ -10,6 +10,7 @@ gem 'devise'#, "~> 2.0.4"
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'thin'
 gem 'typus'
 
 
@@ -48,6 +49,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'foreman'
   gem 'github', ">= 0.7.0", :require => nil
   gem 'heroku', :require => false
   gem 'hpricot', :require => nil # for html2haml
