@@ -1,0 +1,21 @@
+.nav a {
+  // allow floating highlight to be in front of menu
+  // see: http://css-tricks.com/jquery-magicline-navigation/
+  position: relative;
+  z-index: 2;
+
+  &.active {
+    color: white !important;
+  }
+}
+
+#magic-line-two {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+	background: #900;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}

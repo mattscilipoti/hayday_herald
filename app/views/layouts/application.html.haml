@@ -24,9 +24,9 @@
           %a.brand{:href => home_path} HayDay Herald
           .container-fluid.nav-collapse
             %ul.nav
-              %li= link_to "Classifieds", classified_ads_path
-              %li= link_to "Admin", admin_path
-          / /.nav-collapse
+              %li= link_to "Classifieds", classified_ads_path, :class => 'active', :rel => 'blue'
+              %li= link_to "Admin", admin_path, :rel => 'red'
+
     .container-fluid
       - flash.each do |name, msg|
         %div{:class => "alert alert-#{name == :notice ? "success" : "error"}"}
@@ -47,9 +47,8 @@
       / /row
       %footer
         %p &copy; Company 2012
-    / /container
-    /
-      Javascripts
-      \==================================================
+
+    / Javascripts
+    /==================================================
     / Placed at the end of the document so the pages load faster
     = javascript_include_tag "application"
