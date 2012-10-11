@@ -130,6 +130,7 @@ GEM
     netrc (0.7.7)
     nokogiri (1.5.5)
     orm_adapter (0.0.7)
+    pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -237,6 +238,7 @@ DEPENDENCIES
   heroku
   hpricot
   jquery-rails
+  pg
   rails (= 3.2.8)
   rspec-rails
   ruby_parser
