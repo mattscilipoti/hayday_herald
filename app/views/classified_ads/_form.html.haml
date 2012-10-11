@@ -30,6 +30,7 @@
 
 
   #total_cost.clear
-    =f.input :total_cost
+    =field_set_tag 'How Much?' do
+      =f.input :total_cost
 
   =f.button :submit
