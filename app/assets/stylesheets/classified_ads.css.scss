@@ -17,4 +17,45 @@ img.thumbnail {
   width: 100px;
 }
 
+#quantity {
+
+  $qty_height: 100px;
+  $qty_font_size: 4em;
+
+  li.circle {
+    height: $qty_height;
+    width:  $qty_height;
+
+    border: 1px solid black;
+    border-radius: $qty_height;
+    // vert-align radio button
+    line-height: 2*$qty_font_size;
+    margin: 4px;
+    padding: 4px;
+    position: relative;
+    text-align: center;
+
+    input {
+      //display: none;
+
+      &:checked + label {
+        color: blue;
+        font-family: Impact;
+        text-shadow: blue;
+      }
+    }
+
+    label {
+      height: $qty_height/2;
+      width:  100%;
+
+      font-family: 'Trebuchet MS', Monospace;
+      font-size: $qty_font_size;
+      padding: $qty_height/2 0 0 0;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+
+    }
+  }
 }

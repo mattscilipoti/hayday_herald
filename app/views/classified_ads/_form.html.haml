@@ -7,17 +7,29 @@
           %li= msg
 
   -#=f.input :user, :as => :hidden
-  %div#items
-    %ul.horizontal
-      - Item.all.each do |item|
-        %li
-          = f.label "item_id_#{item.id}" do
-            = item.name
-            = f.radio_button(:item_id, item.id)
-            = image_tag item.image_name, :class => 'thumbnail'
+  #items
+    =field_set_tag 'Which Item?' do
+      %ul.horizontal
+        - Item.all.each do |item|
+          %li
+            = f.label "item_id_#{item.id}" do
+              = item.name
+              = f.radio_button(:item_id, item.id)
+              = image_tag item.image_name, :class => 'thumbnail'
 
-  %div#info.clear
-    =f.input :quantity
+  #quantity.clear
+    =field_set_tag 'How Many?' do
+      -#=f.input :quantity
+
+      %ul.horizontal
+        -(1..20).each do |qty|
+          %li.circle
+            =f.radio_button(:quantity, qty)
+            = f.label "quantity_#{qty}" do
+              =qty
+
+
+  #total_cost.clear
     =f.input :total_cost
 
   =f.button :submit
