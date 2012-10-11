@@ -5,8 +5,6 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 gem 'devise'#, "~> 2.0.4"
 gem 'haml-rails'
 gem 'jquery-rails'
@@ -50,6 +48,7 @@ end
 
 group :development do
   gem 'github', ">= 0.7.0", :require => nil
+  gem 'heroku', :require => false
   gem 'hpricot', :require => nil # for html2haml
   gem 'ruby_parser', :require => nil # for html2haml
 end
