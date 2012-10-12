@@ -14,24 +14,12 @@
     %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
     %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container-fluid
-          %a.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand{:href => home_path} HayDay Herald
-          .container-fluid.nav-collapse
-            %ul.nav
-              %li= link_to "Classifieds", classified_ads_path, :class => 'active', :data => {:highlight_color => '#BBB'}
-              %li= link_to "Admin", admin_path, :data => {:highlight_color => 'red'}
+    = render 'layouts/nav_bar'
 
     .container-fluid
-      - flash.each do |name, msg|
-        %div{:class => "alert alert-#{name == :notice ? "success" : "error"}"}
-          %a.close{"data-dismiss" => "alert"} ×
-          = msg
+      = render 'layouts/message_bar'
+
+      -# TODO: use nested layouts: full, left_sidebar, etc.
       .row-fluid
         -#.span3
           .well.sidebar-nav
@@ -42,11 +30,10 @@
               %li= link_to "Link3", "/path3"
           / /.well
         / /span
-        .span9
+        .span12
           = yield
-      / /row
-      %footer
-        %p &copy; Company 2012
+    %footer.span12
+      %p &copy; GreatEnough 2012
 
     / Javascripts
     /==================================================
