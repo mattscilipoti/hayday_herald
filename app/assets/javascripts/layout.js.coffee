@@ -8,7 +8,7 @@ jQuery ($) ->
     .css("left", $(".nav a.active").position().left)
     .data("origLeft",  $(".nav a.active").position().left)
     .data("origWidth", $magicLineTwo.width())
-    .data("origColor", $(".nav .active").attr("rel"))
+    .data("origColor", $(".nav .active").data("highlight-color"))
 
   $(".nav a").hover ->
     $el = $(this)
@@ -17,7 +17,7 @@ jQuery ($) ->
     $magicLineTwo.stop().animate
       left: leftPos
       width: newWidth
-      backgroundColor: $el.attr("rel")
+      backgroundColor: $el.data("highlight-color")
 
   , ->
     $magicLineTwo.stop().animate

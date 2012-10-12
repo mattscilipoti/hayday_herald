@@ -24,8 +24,8 @@
           %a.brand{:href => home_path} HayDay Herald
           .container-fluid.nav-collapse
             %ul.nav
-              %li= link_to "Classifieds", classified_ads_path, :class => 'active', :rel => 'blue'
-              %li= link_to "Admin", admin_path, :rel => 'red'
+              %li= link_to "Classifieds", classified_ads_path, :class => 'active', :data => {:highlight_color => '#BBB'}
+              %li= link_to "Admin", admin_path, :data => {:highlight_color => 'red'}
 
     .container-fluid
       - flash.each do |name, msg|
