@@ -16,6 +16,20 @@ describe ClassifiedAd do
         expect(subject.cost_per).to eql(0)
       end
 
+      [nil, 0].each do |qty|
+        it "should be 0 when quantity is  #{qty.inspect}" do
+          subject.quantity = 0
+          expect(subject.cost_per).to eql(0)
+        end
+      end
+
+      [nil, 0].each do |cost|
+        it "should be 0 when total_cost is #{cost.inspect}" do
+          subject.total_cost = cost
+          expect(subject.cost_per).to eql(0)
+        end
+      end
+
       it "should be recalculated when quantity changes" do
         subject.quantity = 4
         expect(subject.cost_per).to eql(25)
