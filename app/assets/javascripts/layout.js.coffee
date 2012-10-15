@@ -2,14 +2,15 @@ jQuery ($) ->
   $mainNav2 = $("ul.nav")
   $mainNav2.append "<li id='magic-line-two'></li>"
   $magicLineTwo = $("#magic-line-two")
+  $active_nav = $(".nav .active")
   $magicLineTwo
-    .width($(".nav .active").parent().width())
+    .width($active_nav.parent().width())
     .height($mainNav2.height())
-    .css("background-color", $(".nav .active").data("highlight-color"))
-    .css("left", $(".nav a.active").position().left)
-    .data("origLeft",  $(".nav a.active").position().left)
+    .css("background-color", $active_nav.data("highlight-color"))
+    .css("left", $active_nav.position().left)
+    .data("origLeft",  $active_nav.position().left)
     .data("origWidth", $magicLineTwo.width())
-    .data("origColor", $(".nav .active").data("highlight-color"))
+    .data("origColor", $active_nav.data("highlight-color"))
 
   $(".nav a").hover ->
     $el = $(this)
