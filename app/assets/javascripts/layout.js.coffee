@@ -5,6 +5,7 @@ jQuery ($) ->
   $magicLineTwo
     .width($(".nav .active").parent().width())
     .height($mainNav2.height())
+    .css("background-color", $(".nav .active").data("highlight-color"))
     .css("left", $(".nav a.active").position().left)
     .data("origLeft",  $(".nav a.active").position().left)
     .data("origWidth", $magicLineTwo.width())
