@@ -7,21 +7,24 @@
     %th Cost Per
     %th Quantity
     %th Total Cost
+    %th Username
     %th
     %th
     %th
 
-  - @classified_ads.each do |classified_ad|
+  - @classified_ads.each do |ad|
     %tr
-      -item = classified_ad.item
+      -item = ad.item
       %td.item.icon= image_tag(item.image_name, :alt => item.name)
       %td= item
-      %td= classified_ad.cost_per
-      %td= classified_ad.quantity
-      %td= classified_ad.total_cost
-      %td= link_to 'Show', classified_ad
-      %td= link_to 'Edit', edit_classified_ad_path(classified_ad)
-      %td= link_to 'Destroy', classified_ad, :confirm => 'Are you sure?', :method => :delete
+      %td= ad.cost_per
+      %td= ad.quantity
+      %td= ad.total_cost
+      %td= ad.username
+
+      %td= link_to 'Show', ad
+      %td= link_to 'Edit', edit_classified_ad_path(ad)
+      %td= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete
 
 %br
 

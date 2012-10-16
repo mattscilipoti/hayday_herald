@@ -8,6 +8,7 @@
 
   -#=f.input :user, :as => :hidden
   #items
+    =f.input :username
     =field_set_tag 'Which Item?' do
       %ul.horizontal
         - Item.all.each do |item|

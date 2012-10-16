@@ -1,5 +1,5 @@
 class ClassifiedAd < ActiveRecord::Base
-  attr_accessible :item, :item_id, :total_cost, :quantity
+  attr_accessible :item, :item_id, :total_cost, :quantity, :username
   belongs_to :item
 
   validates_presence_of :item

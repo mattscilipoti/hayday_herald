@@ -9,7 +9,8 @@ Feature: Classified Ads
     And I select the "Wheat" Item
     And I select "10" as the Quantity
     And I fill in:
-      | Total cost | 20 |
+      | Username   | the_user |
+      | Total cost | 20       |
 
     And I submit the page
 
@@ -17,8 +18,8 @@ Feature: Classified Ads
     And I should be on the "Classified Ads" page
 
     And I should see these Classified Ads:
-      | Item  | Cost Per | Quantity | Total Cost |
-      | Wheat | 2        | 10       | 20         |
+      | Username | Item  | Cost Per | Quantity | Total Cost |
+      | the_user | Wheat | 2        | 10       | 20         |
 
 
 
