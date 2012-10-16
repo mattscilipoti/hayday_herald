@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe ClassifiedAd do
   describe 'cost_per' do
-    it "should default to 0" do
-      expect(subject.cost_per).to eql(0)
+    it "should default to nil" do
+      expect(subject.cost_per).to be_nil
     end
 
     context 'when total_cost is assigned' do
