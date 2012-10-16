@@ -42,6 +42,7 @@ end
 # gem 'debugger'
 
 group :development, :test do
+  gem 'awesome_print'
   gem 'capybara'
   gem 'debugger'
   gem 'rspec-rails'
