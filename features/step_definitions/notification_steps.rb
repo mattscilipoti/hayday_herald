@@ -1,9 +1,9 @@
-module NavigationLogic
-  def path_to(path_name)
-    send("#{path_name.parameterize.underscore}_path")
+module NotificationLogic
+  def flash_message_locator(flash_type)
+    ".alert.alert-#{flash_type}"
   end
 end
-World(NavigationLogic)
+World(NotificationLogic)
 
 Given /am on the (.+) page$/ do |page_name|
   visit path_to(page_name)
@@ -50,15 +50,15 @@ Then /^I should receive the "([^"]+)" email$/ do |email_type|
 end
 
 Then /should see a (alert|error|failure|notice|success) (?:message|notice)$/ do |flash_type|
-  page.should have_selector("#flash .#{flash_type}"), unexpected_node_contents('#flash')
+  page.should have_selector(flash_message_locator(flash_type)), unexpected_node_contents('#flash')
 end
 
 # Used to verify a specific message against the locale string
-Then /should see the "([^"]+)" (failure) message/ do |requested_message, message_type|
+Then /should see the "([^"]+)" (error|failure) message/ do |requested_message, message_type|
   requested_message = requested_message.parameterize.underscore.to_sym
   i18n_key = case requested_message
-             when :unable_to_reset_password # list authentication realted messages here
-               "authentication.#{requested_message.to_s}"
+             when :unauthenticated # list authentication realted messages here
+               "devise.failure.#{requested_message}"
              else
                "flash.#{requested_message}"
              end
@@ -68,11 +68,11 @@ Then /should see the "([^"]+)" (failure) message/ do |requested_message, message
 end
 
 Then /should see this (alert|error|failure|notice|success) message:$/ do |flash_type, message|
-  page.should have_selector("#flash .#{flash_type}", :text => message)
+  page.should have_selector(flash_message_locator(flash_type), :text => message)
 end
 
 Then /the (alert|error|failure|notice|success) message should contain "([^"]+)"$/ do |flash_type, message|
   step "should see a #{flash_type} message"
-  msg_tag = find("#flash .#{flash_type}")
+  msg_tag = find(flash_message_locator(flash_type))
   msg_tag.text.should match /#{message}/i
 end
