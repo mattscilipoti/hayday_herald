@@ -1,0 +1,10 @@
+/* Hide stuff via css for Progressive Enhancement
+  see: http://www.learningjquery.com/2008/10/1-way-to-avoid-the-flash-of-unstyled-content
+  Overview:
+    Javascript adds the 'js' class to <html>.
+    CSS exists to hide specific stuff under .js.
+    We will have a list of specific stuff (#flash) and stuff with the .js-hide class.
+*/
+.js {
+  .js-hide { display: none; }
+}

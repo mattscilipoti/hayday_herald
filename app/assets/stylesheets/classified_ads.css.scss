@@ -18,12 +18,12 @@ $ad_font_size: 4em;
   font-size: $ad_font_size;
 }
 
-#items li {
+#items_area li {
   padding-right: 20px;
   width: 100px;
 }
 
-#classified_ad_quantity {
+#quantity_area {
 
   $qty_height: 50px;
   $qty_padding: 4px;
@@ -66,8 +66,8 @@ $ad_font_size: 4em;
   }
 }
 
-#total_cost {
-  input {
+#total_cost_area, #quantity_area {
+  input.currency, input.numeric {
     height: 1em;
     font-size: 1em;
   }

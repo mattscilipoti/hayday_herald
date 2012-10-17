@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require jquery.color
 //= require twitter/bootstrap
+//= require progressive_enhancement
 //= require_tree .
