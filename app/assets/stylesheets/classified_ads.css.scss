@@ -2,25 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.item.icon {
-  max-width:  40px;
-  max-height: 40px;
-}
+$item_icon_width: 30px;
 
-img.thumbnail {
-  width:  100px;
-  height: 100px;
+#items_area {
+  img.thumbnail {
+    width:  $item_icon_width;
+    height: $item_icon_width;
+  }
+
+  li {
+    padding-right: 20px;
+    //width: $item_icon_width;
+  }
+
 }
 
 $ad_font_size: 4em;
 
 .controls {
   font-size: $ad_font_size;
-}
-
-#items_area li {
-  padding-right: 20px;
-  width: 100px;
 }
 
 #quantity_area {
