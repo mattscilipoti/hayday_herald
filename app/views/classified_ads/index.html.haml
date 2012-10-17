@@ -1,30 +1,32 @@
 %h1 Classified Ads
 
 %table#classified_ads
-  %tr
-    %th
-    %th Item
-    %th Cost Per
-    %th Quantity
-    %th Total Cost
-    %th Username
-    %th
-    %th
-    %th
-
-  - @classified_ads.each do |ad|
+  %thead
     %tr
-      -item = ad.item
-      %td.item.icon= image_tag(item.image_name, :alt => item.name)
-      %td= item
-      %td= ad.cost_per
-      %td= ad.quantity
-      %td= ad.total_cost
-      %td= ad.username
+      %th
+      %th Item
+      %th Cost Per
+      %th Quantity
+      %th Total Cost
+      %th Username
+      %th
+      %th
+      %th
 
-      %td= link_to 'Show', ad
-      %td= link_to 'Edit', edit_classified_ad_path(ad)
-      %td= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete
+  %tbody
+    - @classified_ads.each do |ad|
+      %tr
+        -item = ad.item
+        %td.item.icon= image_tag(item.image_name, :alt => item.name)
+        %td= item
+        %td= ad.cost_per
+        %td= ad.quantity
+        %td= ad.total_cost
+        %td= ad.username
+
+        %td= link_to 'Show', ad
+        %td= link_to 'Edit', edit_classified_ad_path(ad)
+        %td= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete
 
 %br
 

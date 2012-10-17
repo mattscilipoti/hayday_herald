@@ -1,5 +1,5 @@
-When /select "(.*?)" as the Quantity$/ do |qty|
-  within '#quantity' do
+When /select "(.*?)" as the (.+)/ do |qty, attribute|
+  within "#classified_ad_#{attribute.underscore}" do
     choose qty
   end
 end

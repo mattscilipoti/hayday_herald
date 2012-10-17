@@ -1,37 +1,44 @@
 = simple_form_for @classified_ad, :class => 'form-horizontal' do |f|
-  -if @classified_ad.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@classified_ad.errors.count, "error")} prohibited this classified_ad from being saved:"
-      %ul
-        - @classified_ad.errors.full_messages.each do |msg|
-          %li= msg
+  .row_fluid
+    -if @classified_ad.errors.any?
+      #error_explanation.span12
+        %h2= "#{pluralize(@classified_ad.errors.count, "error")} prohibited this classified_ad from being saved:"
+        %ul
+          - @classified_ad.errors.full_messages.each do |msg|
+            %li= msg
+  .row_fluid
+    #items.span12
+      =field_set_tag 'Which Item?' do
+        %ul.horizontal
+          - Item.all.each do |item|
+            %li
+              = f.label "item_id_#{item.id}" do
+                = item.name
+                = f.radio_button(:item_id, item.id)
+                = image_tag item.image_name, :class => 'thumbnail'
 
-  -#=f.input :user, :as => :hidden
-  #items
-    =f.input :username
-    =field_set_tag 'Which Item?' do
-      %ul.horizontal
-        - Item.all.each do |item|
-          %li
-            = f.label "item_id_#{item.id}" do
-              = item.name
-              = f.radio_button(:item_id, item.id)
-              = image_tag item.image_name, :class => 'thumbnail'
+  .row_fluid
+    .span6
+      #classified_ad_quantity
+        =field_set_tag 'How Many?' do
+          -#=f.input :quantity
 
-  #quantity.clear
-    =field_set_tag 'How Many?' do
-      -#=f.input :quantity
-
-      %ul.horizontal
-        -(1..20).each do |qty|
-          %li.circle
-            =f.radio_button(:quantity, qty)
-            = f.label "quantity_#{qty}" do
-              =qty
+          %ul.horizontal
+            -(1..20).each do |qty|
+              %li.circle
+                =f.radio_button(:quantity, qty)
+                = f.label "quantity_#{qty}" do
+                  =qty
 
 
-  #total_cost.clear
-    =field_set_tag 'How Much?' do
-      =f.input :total_cost, :as => :currency
+      #total_cost.clear
+        =field_set_tag 'How Much?' do
+          =f.input :total_cost, :as => :currency
 
-  =f.button :submit
+    .span6
+      - usernames = Ad.all.collect(&:username).uniq.compact
+      =f.input :username, :collection => usernames, :input_html => {:class => 'chzn-select'}
+
+  .row_fluid.clear
+    %hr
+    =f.button :submit

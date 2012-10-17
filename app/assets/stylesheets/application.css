@@ -12,6 +12,10 @@
  *= require_tree .
  */
 
+table th,td {
+  padding: 2px 4px;
+}
+
 ul.horizontal li {
   display: inline;
   float: left;
