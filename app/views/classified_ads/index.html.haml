@@ -17,7 +17,7 @@
     - @classified_ads.each do |ad|
       %tr
         -item = ad.item
-        %td.item.icon= image_tag(item.image_name, :alt => item.name)
+        %td.item.icon= image_tag(item.image_name, :alt => item.name, :class => 'thumbnail')
         %td= item
         %td= ad.cost_per
         %td= ad.quantity

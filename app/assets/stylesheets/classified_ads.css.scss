@@ -2,14 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 $item_icon_width: 30px;
 
-#items_area {
-  img.thumbnail {
-    width:  $item_icon_width;
-    height: $item_icon_width;
-  }
+img.thumbnail {
+  width:  $item_icon_width;
+  height: $item_icon_width;
+}
 
+
+#items_area {
   li {
     padding-right: 20px;
     //width: $item_icon_width;
