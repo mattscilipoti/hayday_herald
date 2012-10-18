@@ -1,4 +1,4 @@
-= simple_form_for @classified_ad, :class => 'form-horizontal' do |f|
+= simple_form_for @classified_ad, :html => {:class => 'classified_ad'} do |f|
   .row_fluid
     -if @classified_ad.errors.any?
       #error_explanation.span12
