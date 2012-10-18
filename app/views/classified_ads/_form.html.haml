@@ -23,12 +23,12 @@
         =field_set_tag 'How Many?' do
           =f.input :quantity, :input_html => {:min => 1, :max => 10}
 
-          %ul#quantity_choices.horizontal.js-hide
-            -(1..10).each do |qty|
-              %li.circle
-                =f.radio_button(:quantity, qty)
-                =f.label "quantity_#{qty}" do
-                  =qty
+        %ul#quantity_choices.horizontal.js-hide
+          -(1..10).each do |qty|
+            %li.circle
+              =f.radio_button(:quantity, qty)
+              =f.label "quantity_#{qty}" do
+                =qty
 
 
       #total_cost_area.clear

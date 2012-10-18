@@ -33,8 +33,8 @@ $ad_font_size: 4em;
 
 #quantity_area {
 
-  $qty_height: 50px;
-  $qty_padding: 4px;
+  $qty_height: 30px;
+  $qty_padding: 3px;
 
   li.circle {
     height: $qty_height;
@@ -43,7 +43,7 @@ $ad_font_size: 4em;
     border: 1px solid black;
     border-radius: $qty_height;
     // vert-align radio button
-    line-height: 2*$ad_font_size;
+    line-height: $ad_font_size;
     margin: $qty_padding;
     padding: $qty_padding;
     position: relative;
@@ -64,7 +64,7 @@ $ad_font_size: 4em;
       width:  100%;
 
       font-family: 'Trebuchet MS', Monospace;
-      font-size: $ad_font_size;
+      font-size: $ad_font_size/1.8;
       padding: $qty_height/2 0 0 0;
       position: absolute;
       top: -$qty_padding;
