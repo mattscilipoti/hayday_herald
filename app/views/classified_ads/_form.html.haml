@@ -21,7 +21,7 @@
     .span6
       #quantity_area
         =field_set_tag 'How Many?' do
-          =f.input :quantity
+          =f.input :quantity, :input_html => {:min => 1, :max => 10}
 
           %ul#quantity_choices.horizontal.js-hide
             -(1..10).each do |qty|
@@ -33,11 +33,12 @@
 
       #total_cost_area.clear
         =field_set_tag 'How Much?' do
-          =f.input :total_cost, :as => :currency, :label => false
+          =f.input :total_cost, :as => :currency, :label => false, :input_html => {:min => 1}
 
     .span6
-      -# usernames = Ad.all.collect(&:username).uniq.compact
-      =f.input :username
+      =field_set_tag 'Who?' do
+        -# usernames = Ad.all.collect(&:username).uniq.compact
+        =f.input :username
 
   .row_fluid.clear
     %hr
