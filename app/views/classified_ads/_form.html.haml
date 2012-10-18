@@ -8,38 +8,35 @@
             %li= msg
   .row_fluid
     #items_area.span12
-      =field_set_tag 'Which Item?' do
-        %ul.horizontal
-          - Item.all.each do |item|
-            %li
-              = f.label "item_id_#{item.id}" do
-                = item.name
-                = f.radio_button(:item_id, item.id)
-                = image_tag item.image_name, :class => 'thumbnail'
+      %ul.horizontal
+        - Item.all.each do |item|
+          %li
+            = f.label "item_id_#{item.id}" do
+              = item.name
+              = f.radio_button(:item_id, item.id)
+              = image_tag item.image_name, :class => 'thumbnail'
 
   .row_fluid.clear
     .span6
+      %hr
       #quantity_area
-        =field_set_tag 'How Many?' do
-          =f.input :quantity, :input_html => {:min => 1, :max => 10}
+        =f.input :quantity, :input_html => {:min => 1, :max => 10}
 
-        %ul#quantity_choices.horizontal.js-hide
+        -#%ul#quantity_choices.horizontal.js-hide
           -(1..10).each do |qty|
             %li.circle
               =f.radio_button(:quantity, qty)
               =f.label "quantity_#{qty}" do
                 =qty
 
-
+      %hr
       #total_cost_area.clear
-        =field_set_tag 'How Much?' do
-          =f.input :total_cost, :as => :currency, :label => false, :input_html => {:min => 1}
+        =f.input :total_cost, :as => :currency, :input_html => {:min => 1}
 
     .span6
-      =field_set_tag 'Who?' do
-        -usernames = Ad.all.collect(&:username).uniq.compact
-        =f.input :username, :input_html => {:data => {:usernames => usernames}}
+      %hr
+      -usernames = Ad.all.collect(&:username).uniq.compact
+      =f.input :username, :input_html => {:data => {:usernames => usernames}}
 
   .row_fluid.clear
-    %hr
     =f.button :submit

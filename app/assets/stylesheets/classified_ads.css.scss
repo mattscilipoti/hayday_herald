@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+$ad_font_size: 4em;
 $item_icon_width: 30px;
 
 img.thumbnail {
@@ -10,10 +11,14 @@ img.thumbnail {
   height: $item_icon_width;
 }
 
-form.classified_ad .controls {
+form.classified_ad .control-group {
   input, .ui-autocomplete a {
     height: 1em;
     font-size: 1em;
+  }
+  .control-label {
+    font-size: 2em;
+    padding: 4px;
   }
 }
 
@@ -25,7 +30,6 @@ form.classified_ad .controls {
 
 }
 
-$ad_font_size: 4em;
 
 .controls {
   font-size: $ad_font_size;
