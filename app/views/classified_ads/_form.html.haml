@@ -37,8 +37,8 @@
 
     .span6
       =field_set_tag 'Who?' do
-        -# usernames = Ad.all.collect(&:username).uniq.compact
-        =f.input :username
+        -usernames = Ad.all.collect(&:username).uniq.compact
+        =f.input :username, :input_html => {:data => {:usernames => usernames}}
 
   .row_fluid.clear
     %hr

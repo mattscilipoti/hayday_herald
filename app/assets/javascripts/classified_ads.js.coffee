@@ -4,10 +4,19 @@
 
 jQuery (j$) ->
   initQuantityChoices()
+  initUserList()
 
 initQuantityChoices = ->
   $('#quantity_choices input').click -> populateQuantity($(this).val())
   $('#quantity_choices').show()
 
+initUserList = ->
+  $( "#classified_ad_username" ).autocomplete
+    source: usernames()
+
 populateQuantity = (quantity) ->
   $('#classified_ad_quantity').val(quantity)
+
+usernames = ->
+  $("#classified_ad_username").data("usernames")
+

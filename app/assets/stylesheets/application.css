@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require progressive_enhancement
+ *= require jquery.ui.autocomplete
  *= require_self
  *= require_tree .
  */

@@ -10,6 +10,12 @@ img.thumbnail {
   height: $item_icon_width;
 }
 
+#new_classified_ad, #edit_classified_ad {
+  input, .ui-autocomplete a {
+    height: 1em;
+    font-size: 1em;
+  }
+}
 
 #items_area {
   li {
@@ -68,9 +74,3 @@ $ad_font_size: 4em;
   }
 }
 
-#total_cost_area, #quantity_area {
-  input.currency, input.numeric {
-    height: 1em;
-    font-size: 1em;
-  }
-}

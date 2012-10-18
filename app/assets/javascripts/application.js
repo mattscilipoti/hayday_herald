@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.autocomplete
 //= require jquery.color
 //= require twitter/bootstrap
 //= require progressive_enhancement
