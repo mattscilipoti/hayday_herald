@@ -6,11 +6,12 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'pg'
 
+gem 'database_cleaner', :require => false
 gem 'devise'#, "~> 2.0.4"
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'simple_form'
-gem 'thin'
+gem 'thin', :require => false
 gem 'typus'
 
 
@@ -44,7 +45,6 @@ end
 group :development, :test do
   gem 'awesome_print'
   gem 'capybara'
-  gem 'database_cleaner', :require => false
   gem 'debugger'
   gem 'rspec-rails'
   gem 'sqlite3'
