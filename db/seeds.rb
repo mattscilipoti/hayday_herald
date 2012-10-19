@@ -14,4 +14,7 @@ end
 
 puts "Seeding db..."
 crops = %w(Wheat Corn Soybean Sugarcane Carrot Pumpkin Indigo ChiliPepper Raspberry Apple)
-crops.each {|crop| Item.find_or_create_by_name(:name => crop)}
+goods = %w(Bread Cookie CornBread Cream Butter Cheese Popcorn ButterPopcorn ChiliPopcorn Hamburger BaconAndEggs Pancake CarrotPie PumkpinPie BaconPie BrownSugar WhiteSugar Syrup Cheesecake CarrotCake ButterCake)
+animal_goods = %w(Eggs Milk Bacon Wool)
+animal_food = %w(ChickenFood CowFood PigFood SheepFood GoatFood)
+(crops | goods | animal_goods | animal_food).each {|crop| Item.find_or_create_by_name(:name => crop)}
