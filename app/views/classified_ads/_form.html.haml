@@ -9,7 +9,7 @@
   .row_fluid
     #items_area.span12
       %ul.horizontal
-        - Item.all.each do |item|
+        - Item.order(:name).all.each do |item|
           %li
             = f.label "item_id_#{item.id}" do
               = item.name
