@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-require 'database_cleaner'
 
 if ENV['RESET'] =~ /true/i
+  require 'database_cleaner'
   puts "Cleaning db (due to RESET)"
   DatabaseCleaner.clean_with :truncation
 end
