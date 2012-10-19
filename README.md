@@ -1,16 +1,20 @@
-# ReadMe
+# HayDay Herald
+Support for the HayDay game from SuperCell LTD
 
-Using Devise
+Classified Ads: gather stats, help with decisions about selling price
+Wanted Ads: let people know what you need
 
-For Admin, typus
+
+Using Devise for Auth
+Typus for Admin
 *  see: http://docs.typuscmf.com/en/latest/recipes/devise-authentication.html
 
 ## Deployment
 
 ```
-ey deploy
+heroku
 ```
-Remove
+
 ## Thanks
 
 The original scaffold for this application was created by [App Scrolls](http://appscrolls.org).
