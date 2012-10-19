@@ -7,20 +7,11 @@
           - @classified_ad.errors.full_messages.each do |msg|
             %li= msg
   .row_fluid
-    #items_area.span12
-      %ul.horizontal
-        - Item.order(:name).all.each do |item|
-          %li
-            = f.label "item_id_#{item.id}" do
-              = item.name
-              = f.radio_button(:item_id, item.id)
-              = image_tag item.image_name, :class => 'thumbnail'
-
-  .row_fluid.clear
-    .span6
-      %hr
-      #quantity_area
-        =f.input :quantity, :input_html => {:min => 1, :max => 10}
+    %ul.horizontal
+      %li#item
+        =f.association :item
+      %li
+        =f.input :quantity, :required => true, :input_html => {:min => 1, :max => 10}
 
         -#%ul#quantity_choices.horizontal.js-hide
           -(1..10).each do |qty|
@@ -29,14 +20,12 @@
               =f.label "quantity_#{qty}" do
                 =qty
 
-      %hr
-      #total_cost_area.clear
-        =f.input :total_cost, :as => :currency, :input_html => {:min => 1}
+      %li
+        =f.input :total_cost, :as => :currency, :required => true, :input_html => {:min => 1}
 
-    .span6
-      %hr
-      -usernames = Ad.all.collect(&:username).uniq.compact
-      =f.input :username, :input_html => {:data => {:usernames => usernames}}
+      %li
+        -usernames = Ad.all.collect(&:username).uniq.compact
+        =f.input :username, :required => true, :input_html => {:data => {:usernames => usernames}}
 
   .row_fluid.clear
     =f.button :submit

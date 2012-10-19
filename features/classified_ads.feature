@@ -6,10 +6,10 @@ Feature: Classified Ads
       | Wheat |
     When I go to the New page for a Classified Ad
 
-    And I select the "Wheat" Item
-    And I select "10" as the Quantity
+    And I choose the "Wheat" Item
     And I fill in:
       | Username   | the_user |
+      | Quantity   | 10       |
       | Total cost | 20       |
 
     And I submit the page

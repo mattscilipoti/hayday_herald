@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   attr_accessible :name
+  default_scope :order => :name
 
   def image_name
     file_name = "#{name.underscore}.jpeg"
