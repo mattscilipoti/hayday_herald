@@ -44,6 +44,7 @@ end
 group :development, :test do
   gem 'awesome_print'
   gem 'capybara'
+  gem 'database_cleaner', :require => false
   gem 'debugger'
   gem 'rspec-rails'
   gem 'sqlite3'
@@ -60,7 +61,6 @@ end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'capybara', :require => false
-  gem 'database_cleaner', :require => false
   # zeus & in-memory db don't play well together
   #gem 'memory_test_fix', :github => 'stepahn/memory_test_fix'
 end
