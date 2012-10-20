@@ -11,13 +11,16 @@ img.thumbnail {
   height: $item_icon_width;
 }
 
-form.classified_ad .control-group {
-  input, select {
+form.classified_ad {
+  li {
+    margin: 2px 8px;
+  }
+
+  input {
     height: 1em;
     font-size: $ad_font_size;
-    margin: 2px 8px;
+    line-height: 1em;
     width: 180px;
-
   }
 
   .control-label {
