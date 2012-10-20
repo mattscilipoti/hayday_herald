@@ -1,15 +1,8 @@
 = simple_form_for @classified_ad, :html => {:class => 'classified_ad'} do |f|
-  .row_fluid
-    -if @classified_ad.errors.any?
-      #error_explanation.span12
-        %h2= "#{pluralize(@classified_ad.errors.count, "error")} prohibited this classified_ad from being saved:"
-        %ul
-          - @classified_ad.errors.full_messages.each do |msg|
-            %li= msg
-  .row_fluid
+  .clear
     %ul.horizontal
       %li#item
-        =f.association :item
+        =f.association :item, :input_html => { :class => 'chzn-select', :data => {:placeholder => 'Choose'}}
       %li
         =f.input :quantity, :required => true, :input_html => {:min => 1, :max => 10}
 
@@ -27,5 +20,5 @@
         -usernames = Ad.all.collect(&:username).uniq.compact
         =f.input :username, :required => true, :input_html => {:data => {:usernames => usernames}}
 
-  .row_fluid.clear
+  .clear
     =f.button :submit

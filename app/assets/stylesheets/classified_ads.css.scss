@@ -12,14 +12,23 @@ img.thumbnail {
 }
 
 form.classified_ad .control-group {
-  input, .ui-autocomplete a {
+  input, select {
     height: 1em;
-    font-size: 1em;
+    font-size: $ad_font_size;
+    margin: 2px 8px;
+    width: 180px;
+
   }
+
   .control-label {
     font-size: 2em;
     padding: 4px;
   }
+
+}
+
+#classified_ad_username {
+  width: 250px;
 }
 
 #items_area {
@@ -30,10 +39,6 @@ form.classified_ad .control-group {
 
 }
 
-
-.controls {
-  font-size: $ad_font_size;
-}
 
 #quantity_area {
 

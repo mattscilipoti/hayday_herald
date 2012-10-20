@@ -16,4 +16,8 @@
 //= require jquery.color
 //= require twitter/bootstrap
 //= require progressive_enhancement
+//= require chosen-jquery
+//= require_self
 //= require_tree .
+
+$(".chzn-select").chosen();

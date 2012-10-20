@@ -10,6 +10,7 @@ gem 'database_cleaner', :require => false
 gem 'devise'#, "~> 2.0.4"
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'chosen-rails'
 gem 'simple_form'
 gem 'thin', :require => false
 gem 'typus'
